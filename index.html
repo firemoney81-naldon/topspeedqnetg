@@ -1,23 +1,324 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+
+ <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "serviceType": "InternetServiceP‌rovider",
+    "name": "수원 인터넷 설치 전문 서비스",
+    "image": "https://도메인/logo_suwon.png",
+    "url": "https://도메인/suwon-internet",
+    "telephone": "031-123-4567",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "경기도 수원시 팔달구 ○○로 ○○",
+      "addressLocality": "수원시",
+      "addressRegion": "경기",
+      "postalCode": "16200",
+      "addressCountry": "KR"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "수원시" },
+      { "@type": "City", "name": "화성시" },
+      { "@type": "City", "name": "용인시" }
+    ],
+    "priceRange": "₩₩₩",
+    "description": "수원시 전 지역 인터넷 설치, 신규 가입, 요금 비교, 현금 지원금, 사은품 혜택 정보 제공. SK, KT, LG 통신사별 비교 및 추천."
+  }
+  </script>
+
+  <style>
+    /* 폰트 설정 및 기본 스타일 */
+    body { font-family: 'Noto Sans KR', sans-serif; margin:0; padding:0; background:#f4f7fa; color:#333; line-height:1.7; font-size:16px; }
+    header { background:#ffffff; border-bottom:5px solid #0b3d91; padding:30px 20px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+    main { max-width:1000px; margin:20px auto; padding:0 20px; }
+    section { background:#ffffff; padding:30px; border-radius:12px; margin-bottom:25px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
+    footer { text-align:center; padding:30px; background:#e9ecef; color:#6c757d; border-top:1px solid #dee2e6; margin-top:20px; }
+
+    /* 헤딩 스타일 - 다채로운 색상과 명확한 계층 구조 */
+    h1 { font-size:2.8rem; color:#0b3d91; margin-bottom:10px; font-weight:700; }
+    h2 { font-size:2.2rem; color:#0b3d91; border-bottom:4px solid #a3c4ff; padding-bottom:10px; margin-top:30px; font-weight:700; }
+    h3 { font-size:1.8rem; color:#4a6fa5; border-left:5px solid #a3c4ff; padding-left:10px; margin-top:25px; }
+    h4 { font-size:1.4rem; color:#0b3d91; margin-top:20px; font-weight:600; }
+
+    /* 텍스트 및 링크 스타일 */
+    p, li, dd, dt { font-size:1.05rem; color:#495057; }
+    ul, ol { padding-left:25px; }
+    a { color:#0b3d91; text-decoration:none; transition:color 0.2s ease; }
+    a:hover { color:#3367d6; text-decoration:underline; }
+
+    /* 버튼 스타일 */
+    .btn-cta {
+      display:inline-block;
+      padding:16px 35px;
+      background:#4285f4; /* Google Blue */
+      color:#fff;
+      font-weight:700;
+      border:none;
+      border-radius:30px;
+      box-shadow:0 6px 10px rgba(66, 133, 244, 0.3);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      cursor:pointer;
+      text-decoration:none;
+      text-align:center;
+      font-size:1.1rem;
+    }
+    .btn-cta:hover {
+      background:#3367d6;
+      transform:translateY(-2px);
+    }
+
+    /* 네비게이션 스타일 */
+    nav { background:#ffffff; padding:20px; border-radius:12px; margin:20px auto; max-width:1000px; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+    nav ul { list-style:none; padding:0; display:flex; flex-wrap:wrap; justify-content:center; }
+    nav li { margin:8px 12px; }
+    nav li a { display:block; padding:10px 15px; background:#e3f2fd; color:#0b3d91; border-radius:8px; font-weight:600; transition:background-color 0.2s ease; }
+    nav li a:hover { background:#a3c4ff; color:#fff; text-decoration:none; }
+
+    /* 테이블 스타일 */
+    table { width:100%; border-collapse: collapse; margin:25px 0; font-size:0.95rem; table-layout: fixed; }
+    th, td { border:1px solid #dee2e6; padding:15px; text-align:left; vertical-align:top; }
+    th { background:#e3f2fd; color:#0b3d91; font-weight:700; text-align:center; }
+    tr:nth-child(even) { background-color: #f8f9fa; }
+
+    /* 견적 양식 스타일 */
+    form { background:#f9f9f9; padding:25px; border-radius:10px; border:1px solid #e0e0e0; max-width:700px; margin:20px auto; }
+    label { display:block; margin-bottom:8px; font-weight:700; color:#333; }
+    input[type="text"], input[type="tel"], select, textarea {
+      width:calc(100% - 20px); padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:6px; box-sizing:border-box; font-size:1rem; transition:border-color 0.3s;
+    }
+    input[type="text"]:focus, input[type="tel"]:focus, select:focus, textarea:focus { border-color:#4285f4; outline:none; }
+
+    /* 박스형 정보 제공 */
+    .info-box { background:#f0f7ff; border-left:5px solid #a3c4ff; padding:20px; margin-bottom:20px; border-radius:8px; }
+    .info-box p { margin:0; font-size:1rem; color:#3a5a78; }
+
+    /* 반응형 디자인 */
+    @media(max-width:768px) {
+      main { padding:0 10px; }
+      nav ul { flex-direction: column; }
+      nav li { margin:5px 0; width:100%; text-align:center; }
+      nav li a { padding:12px; }
+      h1 { font-size:2rem; }
+      h2 { font-size:1.8rem; }
+      h3 { font-size:1.5rem; }
+      table, th, td { display: block; width: 100%; }
+      th { text-align: left; background:#e3f2fd; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>수원 인터넷 설치 전문가이드: 2026년 최신 정보</h1>
+    <p>수원시 전 지역 인터넷 신규 가입, 요금 비교, 현금 사은품 혜택, 추천 업체 정보까지!</p>
+    <a class="btn-cta" href="#contact">수원 인터넷 설치 견적 신청하기</a>
+  </header>
+
+  <main>
+    <nav aria-label="페이지 내 이동">
+      <ul>
+        <li><a href="#intro">인터넷 설치, 왜 수원에서 중요한가?</a></li>
+        <li><a href="#service-types">통신사별 요금제 및 상품 종류</a></li>
+        <li><a href="#pricing">2026년 통신사별 요금 및 현금지원 비교</a></li>
+        <li><a href="#suwon-area">수원시 지역별 맞춤 설치 전략</a></li>
+        <li><a href="#checklist">신규 가입 전 필수 체크리스트</a></li>
+        <li><a href="#faq">자주 묻는 질문 (FAQ)</a></li>
+        <li><a href="#contact">견적 상담 신청</a></li>
+      </ul>
     </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+    <section id="intro">
+      <h2 id="section-intro">수원 인터넷 설치 전문가이드: 현명한 선택을 위한 첫걸음</h2>
+      <p>수원시는 경기도의 중심 도시로서 인구 밀도가 높고 주거 형태가 다양하여 인터넷 서비스에 대한 수요가 매우 높습니다. SKT, KT, LG U+ 등 주요 통신사들이 치열하게 경쟁하는 지역이기도 합니다. 하지만 복잡한 요금제와 수많은 할인 혜택, 현금 사은품 광고 속에서 나에게 맞는 '가장 저렴한 곳' 또는 '가장 빠른 곳'을 찾는 것은 여간 어려운 일이 아닙니다.</p>
+      <div class="info-box">
+        <p><strong>핵심 키워드:</strong> 수원 인터넷, 수원 신규 가입, 수원 저렴한 곳, 수원 SKT KT LG 비교, 2026년 사은품, 수원 현금지원.</p>
+        <p>본 가이드에서는 2026년 최신 정보를 바탕으로 수원 지역의 인터넷 설치 비용(가격, 견적, 금액)을 상세히 분석하고, 복잡한 요금제와 사은품 현금지원 구조를 알기 쉽게 설명하여, 수원 시민들이 합리적인 선택을 할 수 있도록 돕습니다.</p>
+      </div>
+      <p>특히, 수원시 내 지역별로 통신 인프라 환경이 다르기 때문에 단순히 '싼곳'을 찾기보다 '우리 집'에 가장 적합한 통신사를 찾는 것이 중요합니다. 이 가이드를 통해 초고속 인터넷부터 기가급, 심지어 10기가급까지 다양한 상품을 이해하고, 숨겨진 할인 혜택까지 모두 챙겨보세요.</p>
+    </section>
+
+    <section id="service-types">
+      <h2 id="section-service-types">통신사별 주요 상품 종류 및 선택 기준</h2>
+      <p>인터넷 상품은 크게 속도와 결합 서비스에 따라 나뉩니다. 사용자 환경과 필요에 따라 적절한 상품을 선택하는 것이 비용 효율성을 높이는 핵심입니다. 단순히 100메가(Mbps) 상품을 선택할 경우, 넷플릭스 4K 스트리밍이나 고용량 파일 다운로드에 지연이 발생할 수 있습니다. 반면, 일반적인 가정에서 10기가 인터넷을 설치하는 것은 과도한 지출일 수 있습니다.</p>
+      <h3>1. 속도별 상품 비교 (100Mbps, 500Mbps, 1Gbps)</h3>
+      <table aria-label="인터넷 속도별 상품 특징 비교">
+        <thead>
+          <tr>
+            <th>상품 유형 (속도)</th>
+            <th>주요 특징 및 적합한 사용자</th>
+            <th>2026년 예상 월 요금대 (결합 할인 전)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>광랜 (100Mbps)</strong></td>
+            <td>1인 가구, 간단한 웹서핑 및 이메일 사용, 스마트폰 사용 위주. IPTV 1대 연결 시 무난함.</td>
+            <td>₩22,000 ~ ₩27,500</td>
+          </tr>
+          <tr>
+            <td><strong>기가 라이트 (500Mbps)</strong></td>
+            <td>2~3인 가구, 고화질 동영상 스트리밍, 온라인 게임, 재택근무. 가장 대중적인 선택.</td>
+            <td>₩33,000 ~ ₩38,500</td>
+          </tr>
+          <tr>
+            <td><strong>기가 인터넷 (1Gbps)</strong></td>
+            <td>4인 이상 가구, 대용량 파일 업로드/다운로드, 4K UHD 스트리밍 동시 시청, 스트리머, 게이머.</td>
+            <td>₩38,500 ~ ₩44,000</td>
+          </tr>
+          <tr>
+            <td><strong>10기가 인터넷</strong></td>
+            <td>전문가용, 대규모 오피스, AI 및 빅데이터 연구, 고화질 영상 제작. 일반 가정에는 과도할 수 있음.</td>
+            <td>₩66,000 ~ ₩110,000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>2. 결합 상품의 장점 및 사은품 혜택 분석</h3>
+      <p>인터넷 가입 시 가장 중요한 할인 요소는 바로 '결합 할인'입니다. SKT, KT, LG U+는 자사의 모바일 통신사와 인터넷, IPTV를 함께 묶을 경우 파격적인 할인을 제공합니다. 수원 지역에는 다수의 SKT, KT, LG U+ 대리점이 있으며, 각 업체마다 사은품(현금 지원금) 규모가 다릅니다. 이는 통신사 본사 정책과 대리점의 마케팅 전략에 따라 달라지기 때문에 '싼곳'을 찾기 위해서는 반드시 여러 곳을 비교해야 합니다.</p>
+      <h4>AI 기반 추천 서비스 및 기술 동향 (2026년)</h4>
+      <p>최근에는 <a href="https://namu.wiki/w/인공지능" target="_blank">AI 기술(Gemini, ChatGPT 등)</a>이 고객 상담 분야에 도입되어 맞춤형 상품 추천이 가능해졌습니다. AI는 사용자의 데이터 사용 패턴을 분석하여 최적화된 상품을 제안합니다. 예를 들어, <a href="https://namu.wiki/w/ChatGPT" target="_blank">ChatGPT</a>와 같은 대규모 언어 모델 기반의 챗봇 상담을 통해 고객은 복잡한 요금제 규정을 쉽게 이해할 수 있게 됩니다. 이는 통신사들의 경쟁을 더욱 가속화하며 소비자들에게 더 많은 혜택으로 돌아오고 있습니다.</p>
+    </section>
+
+    <section id="pricing">
+      <h2 id="section-pricing">수원 인터넷 설치 비용 및 현금 사은품 비교 (2026년 기준)</h2>
+      <p>인터넷 설치 비용은 월 납부 요금(상품료)과 신규 가입 시 받는 혜택(사은품, 현금지원)으로 나뉩니다. 사은품은 통신사 본사 정책에 따라 결정되는 '상품권'과 대리점 재량으로 지급되는 '현금'으로 구성됩니다. 이 금액은 시기별로 변동이 심하며, 특히 월말이나 성수기(이사철)에는 경쟁이 치열해지면서 사은품이 증가하는 경향이 있습니다.</p>
+      <h3>1. 통신사별 월 요금 비교 (기가 라이트 500Mbps 기준)</h3>
+      <p>다음 표는 2026년 초 기준으로 3년 약정, 모바일 결합 할인 적용 전의 평균 예상 금액을 비교한 것입니다. (실제 견적은 결합 조건에 따라 다를 수 있습니다.)</p>
+      <table aria-label="통신사별 요금 비교">
+        <thead>
+          <tr>
+            <th>통신사</th>
+            <th>월 요금 (500M)</th>
+            <th>결합 할인 종류</th>
+            <th>추가 혜택 (Wi-Fi 6 공유기 등)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>SK 브로드밴드</strong></td>
+            <td>₩33,000 ~ ₩36,000</td>
+            <td>온가족플랜, 온가족프리 (모바일 결합)</td>
+            <td>IPTV 결합 시 혜택 증가, Wi-Fi 6 기본 제공</td>
+          </tr>
+          <tr>
+            <td><strong>KT (올레)</strong></td>
+            <td>₩34,100 ~ ₩37,400</td>
+            <td>총액결합할인, 프리미엄 가족결합 (모바일 결합)</td>
+            <td>1등 통신사로서 안정성 높음, Wi-Fi 6 제공</td>
+          </tr>
+          <tr>
+            <td><strong>LG U+</strong></td>
+            <td>₩33,000 ~ ₩36,000</td>
+            <td>참 쉬운 가족결합, 한방에 Yo (모바일 결합)</td>
+            <td>IPTV 콘텐츠 강점 (넷플릭스 등), Wi-Fi 6 제공</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>2. 현금지원 및 사은품 혜택의 실체 (저렴한곳 찾는 팁)</h3>
+      <p>수원 지역 인터넷 가입 시 현금 사은품(현금 지원금) 규모는 대리점마다 크게 달라집니다. '최대 지원', '최고 혜택' 등의 광고 문구에 현혹되기보다, 실제 지급되는 현금의 규모와 지급 시기를 정확히 확인해야 합니다. 온라인 채널(네이버, 구글 검색)을 통해 여러 업체를 비교하는 것이 필수적입니다. '내돈내산' 후기를 참고하여 사은품을 제대로 지급하는 신뢰성 있는 업체를 찾는 것이 중요합니다.</p>
+      <p><strong>주요 키워드:</strong> 수원 인터넷 현금지원, 수원 사은품 많이 주는 곳, 수원 인터넷 가입 혜택, 디시 인사이드 후기, 신규 가입 혜택, 인터넷 가입 순위, 현금지원금 비교.</p>
+    </section>
+
+    <section id="suwon-area">
+      <h2 id="section-suwon-area">수원시 지역별 맞춤 설치 전략: 인프라 환경 분석</h2>
+      <p>수원시는 팔달구, 장안구, 권선구, 영통구 4개의 구로 이루어져 있습니다. 이들 지역은 주거 환경과 건축 시기에 따라 인터넷 인프라가 상이하므로, 설치 가능 여부와 속도에 차이가 있습니다. '수원시' 전체를 묶어 견적을 받기보다, '수원시 영통구', '수원시 권선구' 등 상세 지역을 명시하는 것이 정확한 견적을 받는 방법입니다.</p>
+
+      <h3>1. 영통구, 광교 신도시 (첨단 인프라 밀집 지역)</h3>
+      <p>수원시 영통구는 광교 신도시를 포함하며, 비교적 최근에 개발된 지역입니다. 광교동, 영통동, 매탄동(삼성전자 인근) 등의 아파트 단지는 통신 인프라가 잘 구축되어 있어 기가 인터넷(1Gbps) 이상의 속도 설치가 용이합니다. <a href="https://namu.wiki/w/광교신도시" target="_blank">광교신도시</a>의 경우 KT의 인프라가 강세를 보이는 경우가 많으며, SKT와 LG U+ 역시 초고속 인터넷 설치가 원활합니다. 이 지역에서는 안정적인 속도를 보장받기 쉽습니다.</p>
+
+      <h3>2. 장안구, 팔달구 (구도심 및 주택가 밀집 지역)</h3>
+      <p>장안구와 팔달구는 수원시의 구도심을 포함합니다. 정자지구, 조원동, 인계동, 화서동 등 주택가와 상업지구가 혼재되어 있습니다. 특히 오래된 주택가나 연립주택의 경우, 광케이블 인프라가 구축되지 않은 곳이 있을 수 있습니다. 이런 지역에서는 500Mbps 이상의 속도가 제한되거나, 별도의 추가 공사가 필요할 수 있습니다. <a href="https://www.suwon.go.kr/web/index.do" target="_blank">수원시청</a>의 도시계획 정보를 확인해보면 각 지역별 인프라 개선 현황을 파악할 수 있습니다.</p>
+
+      <h3>3. 권선구 (대규모 아파트 단지 및 산업단지)</h3>
+      <p>권선구는 곡반정동, 세류동, 권선동, 호매실동 등 대규모 아파트 단지와 산업단지가 위치해 있습니다. 호매실지구와 같은 신도시 지역은 인프라가 잘 갖춰져 있지만, 세류동이나 구도심 지역은 인프라 차이가 존재합니다. 이 지역의 사용자들은 SKT, KT, LG U+ 3사 모두 설치 가능 여부를 꼼꼼히 확인해야 합니다.</p>
+
+      <h3>수원 지역별 키워드 목록 (SEO 최적화)</h3>
+      <p>수원시 인터넷 설치 관련 검색어는 지역명과 함께 조합될 때 검색 순위(순위, 랭킹) 상승에 유리합니다. 다음은 수원 내 주요 지역 키워드입니다:</p>
+      <p><strong>주요 동네 키워드:</strong> 수원역, 인계동, 영통동, 매탄동, 권선동, 호매실동, 세류동, 곡반정동, 정자동, 천천동, 화서동, 우만동, 광교동, 망포동, 고색동, 오목천동, 구운동, 탑동, 율전동, 이의동, 원천동, 하광교동, 송죽동, 조원동, 파장동, 연무동, 입북동, 당수동, 평동, 고등동.</p>
+      <p><strong>관련 검색어:</strong> 수원 인터넷 가입, 수원 인터넷 저렴한 곳, 수원 SKT 인터넷 설치, 수원 KT 인터넷 설치, 수원 LG U+ 인터넷 설치, 수원 인터넷 현금 사은품, 수원 인터넷 가격 비교, 수원 인터넷 추천 업체.</p>
+    </section>
+
+    <section id="checklist">
+      <h2 id="section-checklist">인터넷 신규 가입 전 필수 체크리스트 (2026년)</h2>
+      <ol>
+        <li><strong>이사 지역 인프라 확인:</strong> 이사할 주소지에 통신사별 광케이블 설치가 되어있는지 확인합니다. 특히 오래된 주택의 경우 KT의 ADSL (구리선)만 설치 가능한 곳이 있을 수 있습니다.</li>
+        <li><strong>약정 기간 및 위약금 확인:</strong> 기존 통신사의 약정 기간이 남았는지 확인하고, 남은 위약금을 계산합니다. 위약금과 신규 가입 혜택(사은품, 현금지원금)을 비교하여 어떤 선택이 유리한지 판단해야 합니다.</li>
+        <li><strong>결합 할인 여부 확인:</strong> 가족 구성원의 휴대폰 통신사를 확인하고, 모바일 결합 시 받을 수 있는 할인 금액을 계산합니다. 결합 할인이 없을 경우 통신사 간 가격 차이는 미미할 수 있습니다.</li>
+        <li><strong>설치비 면제 조건 확인:</strong> 신규 가입 시 설치비 면제 조건이 있는지 확인합니다. 일반적인 설치비는 2~3만 원대이며, 특정 프로모션 기간에는 면제되기도 합니다.</li>
+        <li><strong>사은품 지급 시기 및 조건 확인:</strong> 현금지원금을 언제, 어떻게 지급하는지 명확히 확인합니다. 일부 업체는 <a href="https://namu.wiki/w/인터넷_가입_사은품_먹튀" target="_blank">먹튀</a>를 하거나, 늦게 지급하는 경우가 있습니다.</li>
+        <li><strong>A/S 및 기술 지원 확인:</strong> 24시간 고객센터 운영 여부, 방문 A/S 속도 등을 확인합니다. 인터넷 속도 저하 시 즉각적인 기술 지원이 가능한지 중요합니다.</li>
+        <li><strong>공유기 (Wi-Fi) 성능 확인:</strong> 무상으로 제공되는 공유기가 최신 Wi-Fi 6 또는 Wi-Fi 7을 지원하는지 확인합니다. 구형 공유기는 속도 저하의 원인이 될 수 있습니다.</li>
+      </ol>
+      <a class="btn-cta" href="#contact">수원 맞춤형 견적 요청하기</a>
+    </section>
+
+    <section id="faq">
+      <h2 id="section-faq">자주 묻는 질문 (FAQ)</h2>
+      <dl>
+        <dt>Q1: 100Mbps와 500Mbps 속도 차이가 실제 체감되나요?</dt>
+        <dd>A: 네, 특히 대용량 파일을 다운로드하거나 고화질 동영상 스트리밍을 여러 기기에서 동시에 시청할 때 체감됩니다. 1~2인 가구라면 100Mbps로도 충분할 수 있지만, 3인 이상 또는 4K TV를 사용하는 경우 500Mbps를 추천합니다. 500Mbps는 100Mbps보다 약 3배 빠르다고 보시면 됩니다.</dd>
+        <dt>Q2: 수원에서 SKT, KT, LG U+ 중 어떤 통신사가 가장 좋나요?</dt>
+        <dd>A: 통신사별 장단점이 명확합니다. KT는 '1등 통신사'라는 별명처럼 전국 어디서나 가장 안정적인 인프라를 가지고 있습니다. SKT와 LG U+는 모바일 결합 혜택이 매우 좋고, IPTV 콘텐츠나 사은품 혜택에 집중합니다. 특정 지역(예: <a href="https://www.msit.go.kr/index.do" target="_blank">과학기술정보통신부</a> 통신 품질 평가 결과)에 따라 우위를 점하는 통신사가 다를 수 있습니다.</dd>
+        <dt>Q3: '저렴한 곳'과 '사은품 많이 주는 곳'은 같은 곳인가요?</dt>
+        <dd>A: 반드시 그렇지는 않습니다. '저렴한 곳'은 월 요금이 저렴한 곳을 의미하며, 이는 보통 약정 기간이 긴 경우가 많습니다. '사은품 많이 주는 곳'은 현금지원 금액이 큰 곳을 의미합니다. 통신사 본사 정책은 동일하므로 대리점별 사은품 차이가 발생하며, '싼곳'을 찾기 위해서는 사은품 금액을 월 요금 할인으로 환산하여 비교해보는 것이 가장 정확합니다.</dd>
+        <dt>Q4: AI 챗봇(ChatGPT, Gemini)에게 인터넷 상품을 추천받을 수 있나요?</dt>
+        <dd>A: 네, 최근에는 통신사들이 AI 챗봇을 도입하여 고객의 질문에 답변하고 맞춤형 상품을 추천해줍니다. 하지만 AI는 실시간으로 변동하는 사은품 금액이나 대리점별 프로모션까지 정확하게 반영하기 어렵습니다. AI 챗봇을 통해 기본적인 정보를 얻은 후, 전문 상담원과 통화하여 최종 견적을 확정하는 것을 추천합니다.</dd>
+        <dt>Q5: 수원 인터넷 가입 시 현금 사은품은 언제 받을 수 있나요?</dt>
+        <dd>A: 일반적으로 개통 후 7~15일 이내에 지급됩니다. 업체마다 지급 일정이 다르므로 계약서 작성 전 정확한 지급 일정을 확인하는 것이 중요합니다. 너무 빠른 지급을 약속하는 업체는 사기일 가능성이 있으니 주의해야 합니다.</dd>
+        <dt>Q6: 2026년도 인터넷 속도 표준은 어떻게 되나요?</dt>
+        <dd>A: 현재 500Mbps 기가 라이트 상품이 가장 보편화되었습니다. 2026년도에는 1Gbps 상품이 일반화되고, 10Gbps 서비스도 상용화될 것으로 예상됩니다. <a href="https://www.kto.or.kr/" target="_blank">한국통신사업자연합회(KTOA)</a>의 통계 자료를 보면 알 수 있듯이, 5G/6G 기술 발전과 함께 무선 인터넷 속도도 향상되어 유선 인터넷 속도 경쟁이 심화되고 있습니다.</dd>
+      </dl>
+    </section>
+
+    <section id="contact">
+      <h2 id="section-contact">수원 인터넷 설치 견적 상담 문의</h2>
+      <p>수원 지역 인터넷 설치 견적을 요청하시면, 고객님의 주소지 인프라 환경과 사용 패턴을 고려하여 SKT, KT, LG U+ 3사 견적을 비교해드립니다. 가장 저렴한 곳 또는 사은품 혜택이 좋은 곳을 찾아 맞춤형 견적을 받아보세요.</p>
+      <form action="/submit" method="POST">
+        <h4>기본 정보 입력</h4>
+        <label for="name">이름<span style="color:red;">*</span></label>
+        <input type="text" id="name" name="name" required placeholder="예: 홍길동" />
+
+        <label for="phone">연락처<span style="color:red;">*</span></label>
+        <input type="tel" id="phone" name="phone" required placeholder="010-1234-5678" pattern="[0-9\-]+" />
+
+        <label for="address">설치 희망 주소지 (예: 수원시 영통구 매탄동)</label>
+        <input type="text" id="address" name="address" placeholder="예: 수원시 영통구 매탄동 000아파트" />
+
+        <h4>상세 요청 사항</h4>
+        <label for="move-type">신규 가입 / 통신사 변경 유형<span style="color:red;">*</span></label>
+        <select id="move-type" name="move_type" required>
+          <option value="">선택하세요</option>
+          <option value="신규 가입">신규 가입 (인터넷 처음 사용)</option>
+          <option value="통신사 변경">통신사 변경 (SK->KT 등)</option>
+          <option value="재약정 문의">재약정 문의 (현재 통신사 유지)</option>
+        </select>
+
+        <label for="internet-speed">희망 인터넷 속도<span style="color:red;">*</span></label>
+        <select id="internet-speed" name="internet_speed" required>
+          <option value="">선택하세요</option>
+          <option value="100Mbps">100Mbps (광랜)</option>
+          <option value="500Mbps">500Mbps (기가 라이트)</option>
+          <option value="1Gbps">1Gbps (기가 인터넷)</option>
+        </select>
+
+        <label for="additional-service">추가 서비스 (IPTV, Wi-Fi 등)</label>
+        <textarea id="additional-service" name="additional_service" rows="3" placeholder="예: IPTV 1대 추가, Wi-Fi 공유기 필요, 모바일 결합 예정 통신사"></textarea>
+
+        <button type="submit" class="btn-cta">견적 문의 보내기</button>
+      </form>
+    </section>
+
+    <section id="external-links">
+      <h2 id="section-external-links">공신력 있는 외부 정보 참고</h2>
+      <p>인터넷 통신 서비스는 정부의 규제를 받는 공공성이 있는 서비스입니다. 다음은 공신력 있는 기관에서 제공하는 관련 정보들입니다.</p>
+      <ul>
+        <li><a href="https://www.kcc.go.kr/index.do" target="_blank">방송통신위원회:</a> 통신 서비스 관련 정책 및 법규를 확인할 수 있습니다.</li>
+        <li><a href="https://www.msit.go.kr/index.do" target="_blank">과학기술정보통신부:</a> 통신 서비스 품질 평가 및 통계 자료를 제공합니다.</li>
+        <li><a href="https://www.kto.or.kr/" target="_blank">한국통신사업자연합회(KTOA):</a> 통신사별 요금 및 상품 정보를 비교할 수 있는 사이트를 운영합니다.</li>
+        <li><a href="https://namu.wiki/w/인터넷_가입" target="_blank">나무위키 - 인터넷 가입:</a> 일반적인 인터넷 가입 절차 및 사은품 관련 정보를 확인할 수 있습니다.</li>
+      </ul>
+    </section>
+  </main>
+
+  
